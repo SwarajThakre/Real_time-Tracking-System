@@ -29,7 +29,8 @@ if (navigator.geolocation) {
       } else {
         myMarker.setLatLng([latitude, longitude]);
       }
-      map.setView([latitude, longitude], 15);
+      const currentZoom = map.getZoom();
+      map.setView([latitude, longitude], currentZoom);
     },
     (error) => {
       console.log(error);
@@ -38,7 +39,6 @@ if (navigator.geolocation) {
       enableHighAccuracy: true,
       timeout: 10000,
       maximumAge: 0,
-      distanceFilter: 10,
     }
   );
 }
