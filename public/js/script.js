@@ -11,6 +11,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 let myMarker = null;
+let isFirstPosition = true;
+let userChangedZoom = false;
+
+map.on('zoomed', () => {
+  userChangedZoom = true;
+});
 
 if (navigator.geolocation) {
   navigator.geolocation.watchPosition(
@@ -26,10 +32,24 @@ if (navigator.geolocation) {
             iconSize: [60, 60],
           }),
         }).addTo(map);
+        if (isFirstPosition) {
+          map.setView([latitude, longitude], 13);
+          isFirstPosition = false;
+        }
       } else {
         myMarker.setLatLng([latitude, longitude]);
+
+        // Only pan the map if user hasn't manually zoomed
+        if (!userChangedZoom) {
+          map.setView([latitude, longitude], Math.max(13, map.getZoom()));
+        } else {
+          // Just update position without changing zoom
+          map.panTo([latitude, longitude], {
+            animate: true,
+            duration: 0.5,
+          });
+        }
       }
-      map.setView([latitude, longitude], Math.max(13, map.getZoom()));
     },
     (error) => {
       console.log(error);
