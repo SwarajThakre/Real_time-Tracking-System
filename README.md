@@ -36,22 +36,28 @@ A real-time device tracking web application built using **Node.js**, **Express**
 ├── package.json
 ├── README.md
 
-✨ Features
->🔴 Real-time tracking using Socket.IO
->🗺️ Map integration using Leaflet.js
->📱 Responsive UI for all devices
->📍 Live location updates
->🔌 Scalable for GPS or IoT use
+## ✨ Features
+
+- 🔴 **Real-time Tracking**: Instantly displays device location updates using Socket.IO.
+- 🗺️ **Interactive Map**: View live movements with Leaflet.js on a responsive map interface.
+- 📍 **Live Location Updates**: Markers update dynamically as devices move.
+- 📱 **Responsive UI**: Optimized for desktop, tablet, and mobile screens.
+- ⚡ **Lightweight & Fast**: Uses efficient libraries for smooth performance.
+- 🔌 **Scalable Setup**: Can be extended to handle multiple devices or GPS inputs.
+
 
 📸 Screenshots
 ![Screenshot (6)](https://github.com/user-attachments/assets/eb9dfb7a-5560-4e3e-83af-f636a158ecef)
 
+## 📬 Contact
 
-📬 Contact
-*📧 Email: swarajthakre.stud@gmail.com
-*💼 LinkedIn: Swaraj Thakre
-*🖥️ Portfolio: swarajthakre26.netlify.app
-*🐙 GitHub: @SwarajThakre
+If you'd like to connect, collaborate, or just say hello, feel free to reach out:
+
+- 📧 **Email**: [swarajthakre.stud@gmail.com](mailto:swarajthakre.stud@gmail.com)
+- 💼 **LinkedIn**: [Swaraj Thakre](https://www.linkedin.com/in/swaraj-thakre2629)
+- 🌐 **Portfolio**: [swarajthakre26.netlify.app](https://swarajthakre26.netlify.app)
+- 🐙 **GitHub**: [@SwarajThakre](https://github.com/SwarajThakre)
+
 
 ## 📦 Installation
 
