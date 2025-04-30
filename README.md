@@ -66,5 +66,19 @@ If you'd like to connect, collaborate, or just say hello, feel free to reach out
    git clone https://github.com/SwarajThakre/Real_time-Tracking-System.git
    cd Real_time-Tracking-System
 
+---
+## 🤝 Contributing
+
+Contributions are welcome! If you'd like to improve this project, follow these steps:
+
+1. 🍴 Fork the repository
+2. 🔧 Create your feature branch (`git checkout -b feature/YourFeature`)
+3. 📝 Commit your changes (`git commit -m 'Add some feature'`)
+4. 🚀 Push to the branch (`git push origin feature/YourFeature`)
+5. 🔄 Open a Pull Request
+
+Please ensure your code follows the project's coding style and is properly documented.  
+Thank you for helping improve this project! 💖
+
 
 
