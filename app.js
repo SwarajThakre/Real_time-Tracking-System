@@ -6,6 +6,7 @@ const socket = require('socket.io');
 const server = http.createServer(app);
 const io = socket(server);
 
+// socket.io setup
 io.on('connection', (socket) => {
   console.log('user connected', socket.id);
 
@@ -15,9 +16,10 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log('user disconnected', socket.id);
-    io.emit('userDisconnected', socket.id); // Notify all clients to remove this marker
+    io.emit('userDisconnected', socket.id);
   });
 });
+
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));

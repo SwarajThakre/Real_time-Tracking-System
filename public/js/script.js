@@ -13,10 +13,12 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 let myMarker = null;
 let isFirstPosition = true;
 let userChangedZoom = false;
-
-map.on('zoomed', () => {
+// This is the part where we listen for the zoomend event and set userChangedZoom to false
+map.on('zoomstart', () => {
   userChangedZoom = true;
 });
+
+// For Our marker, we will use a custom icon
 
 if (navigator.geolocation) {
   navigator.geolocation.watchPosition(
@@ -38,12 +40,9 @@ if (navigator.geolocation) {
         }
       } else {
         myMarker.setLatLng([latitude, longitude]);
-
-        // Only pan the map if user hasn't manually zoomed
         if (!userChangedZoom) {
           map.setView([latitude, longitude], Math.max(13, map.getZoom()));
         } else {
-          // Just update position without changing zoom
           map.panTo([latitude, longitude], {
             animate: true,
             duration: 0.5,
@@ -62,6 +61,7 @@ if (navigator.geolocation) {
     }
   );
 }
+// This is the part where we listen for the location updates from the server
 
 socket.on('receiveLocation', (data) => {
   const { id, latitude, longitude } = data;
